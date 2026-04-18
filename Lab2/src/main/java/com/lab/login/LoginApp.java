@@ -8,11 +8,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class LoginApp extends Application {
+
+    // ==========================================
+    // CONFIGURATION PATHS
+    // ==========================================
+    private static final String DEFAULT_USERS_FILE = "Users.txt";
+    // ==========================================
+
     @Override
     public void start(Stage stage) throws IOException {
-        // Grab the file path from run arguments (default to Users.txt if empty)
+        // Grab the file path from run arguments (or use the default config above)
         java.util.List<String> args = getParameters().getRaw();
-        String filePath = args.isEmpty() ? "Users.txt" : args.get(0);
+        String filePath = args.isEmpty() ? DEFAULT_USERS_FILE : args.get(0);
 
         // Load users using the separated logic
         ArrayList<User> validUsers = UsersApp.loadUsers(filePath);
