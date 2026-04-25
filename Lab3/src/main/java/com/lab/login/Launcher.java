@@ -16,7 +16,7 @@ public class Launcher {
         maxAttempts = scanner.nextInt(); // Parameter 1 
 
         System.out.print("Enter block duration in seconds: ");
-        blockTimeSecs = scanner.nextInt(); // Parameter 2 [cite: 9]
+        blockTimeSecs = scanner.nextInt(); // Parameter 2
 
         // Launch the UI only after parameters are received 
         Application.launch(LoginApp.class, args);
